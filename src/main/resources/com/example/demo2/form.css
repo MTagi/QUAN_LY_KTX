@@ -1,0 +1,7 @@
+
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right, #0f6789, #286155);
+}
+.my-element {
+    background-color: #3498db; /* Mã màu xanh dương */
+}

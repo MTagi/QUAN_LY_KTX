@@ -1,0 +1,446 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 29, 2023 lúc 03:31 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `baitaplon`
+--
+CREATE DATABASE IF NOT EXISTS `baitaplon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `baitaplon`;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `dichvu`
+--
+
+CREATE TABLE `dichvu` (
+  `id` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `chucnang` varchar(1000) NOT NULL,
+  `giatien` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `dichvu`
+--
+
+INSERT INTO `dichvu` (`id`, `name`, `chucnang`, `giatien`) VALUES
+('dv001', 'wifi', 'internet', 150000),
+('dv002', 'Giặt là', 'Làm sạch', 150000),
+('dv003', 'Điện', 'sinh hoạt', 300000),
+('dv004', 'Nước uống', 'sinh hoạt', 150000),
+('dv005', 'dọn vệ sinh KTX', 'làm sạch chung', 250000);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `phong`
+--
+
+CREATE TABLE `phong` (
+  `id` varchar(10) NOT NULL,
+  `soluong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phong`
+--
+
+INSERT INTO `phong` (`id`, `soluong`) VALUES
+('101', 8),
+('102', 8),
+('103', 8),
+('104', 8),
+('105', 8),
+('106', 8),
+('201', 8),
+('202', 8),
+('203', 8),
+('204', 8),
+('205', 8),
+('206', 8),
+('301', 8),
+('302', 8),
+('303', 8),
+('304', 8),
+('305', 8),
+('306', 8),
+('401', 8),
+('402', 8),
+('403', 8),
+('404', 8),
+('405', 8),
+('406', 8);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `phong_dichvu`
+--
+
+CREATE TABLE `phong_dichvu` (
+  `idphong` varchar(10) NOT NULL,
+  `iddichvu` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phong_dichvu`
+--
+
+INSERT INTO `phong_dichvu` (`idphong`, `iddichvu`) VALUES
+('101', 'dv001'),
+('101', 'dv002'),
+('101', 'dv003'),
+('101', 'dv004'),
+('101', 'dv005'),
+('102', 'dv001'),
+('102', 'dv002'),
+('102', 'dv003'),
+('102', 'dv004'),
+('102', 'dv005'),
+('103', 'dv001'),
+('103', 'dv002'),
+('103', 'dv003'),
+('103', 'dv004'),
+('104', 'dv001'),
+('104', 'dv002'),
+('104', 'dv003'),
+('104', 'dv004'),
+('105', 'dv001'),
+('105', 'dv002'),
+('105', 'dv003'),
+('106', 'dv001'),
+('106', 'dv002'),
+('106', 'dv003'),
+('201', 'dv001'),
+('201', 'dv002'),
+('201', 'dv003'),
+('201', 'dv004'),
+('202', 'dv001'),
+('202', 'dv002'),
+('202', 'dv003'),
+('202', 'dv004'),
+('203', 'dv001'),
+('203', 'dv003'),
+('203', 'dv004'),
+('203', 'dv005'),
+('204', 'dv001'),
+('204', 'dv002'),
+('204', 'dv003'),
+('204', 'dv004'),
+('204', 'dv005'),
+('205', 'dv001'),
+('205', 'dv002'),
+('205', 'dv003'),
+('205', 'dv004'),
+('205', 'dv005'),
+('206', 'dv001'),
+('206', 'dv002'),
+('206', 'dv003'),
+('206', 'dv004'),
+('206', 'dv005'),
+('301', 'dv001'),
+('301', 'dv002'),
+('301', 'dv003'),
+('301', 'dv004'),
+('301', 'dv005'),
+('302', 'dv001'),
+('302', 'dv002'),
+('302', 'dv003'),
+('302', 'dv004'),
+('302', 'dv005'),
+('302', 'dv006'),
+('303', 'dv001'),
+('303', 'dv002'),
+('303', 'dv003'),
+('303', 'dv004'),
+('303', 'dv005'),
+('303', 'dv006'),
+('304', 'dv001'),
+('304', 'dv002'),
+('304', 'dv003'),
+('304', 'dv004'),
+('304', 'dv005'),
+('304', 'dv006'),
+('305', 'dv001'),
+('305', 'dv002'),
+('305', 'dv003'),
+('305', 'dv004'),
+('305', 'dv005'),
+('305', 'dv006'),
+('306', 'dv001'),
+('306', 'dv002'),
+('306', 'dv003'),
+('306', 'dv004'),
+('306', 'dv005'),
+('306', 'dv006'),
+('401', 'dv001'),
+('401', 'dv002'),
+('401', 'dv003'),
+('401', 'dv004'),
+('401', 'dv005'),
+('401', 'dv006'),
+('402', 'dv001'),
+('402', 'dv002'),
+('402', 'dv003'),
+('402', 'dv004'),
+('402', 'dv005'),
+('402', 'dv006'),
+('403', 'dv001'),
+('403', 'dv002'),
+('403', 'dv003'),
+('403', 'dv004'),
+('403', 'dv005'),
+('403', 'dv006'),
+('404', 'dv001'),
+('404', 'dv002'),
+('404', 'dv003'),
+('404', 'dv004'),
+('404', 'dv005'),
+('404', 'dv006'),
+('405', 'dv001'),
+('405', 'dv002'),
+('405', 'dv003'),
+('405', 'dv004'),
+('405', 'dv005'),
+('405', 'dv006'),
+('406', 'dv001'),
+('406', 'dv002'),
+('406', 'dv003'),
+('406', 'dv004'),
+('406', 'dv005');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `quantuc`
+--
+
+CREATE TABLE `quantuc` (
+  `id` varchar(50) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `gioitinh` varchar(20) DEFAULT NULL,
+  `sodt` varchar(40) DEFAULT NULL,
+  `vaitro` varchar(1000) DEFAULT NULL,
+  `luong` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `quantuc`
+--
+
+INSERT INTO `quantuc` (`id`, `name`, `gioitinh`, `sodt`, `vaitro`, `luong`) VALUES
+('NV001', 'Nguyễn Thị Quyên', 'Nữ', '0359028974', 'quản lý thu chi', 4000000),
+('NV004', 'Nguyễn Văn Hùng', 'Nam', '0356789123', 'sửa chữa', 40000000),
+('NV005', 'Nguyễn Hữu Tài', 'Nam', '03512345678', 'quản lý xe', 4000000),
+('NV006', 'Nguyễn Thị Cúc', 'Nam', '089123123', 'quản lý phòng', 4000000),
+('NV007', 'Nguyễn Thị Bích', 'Nam', '035789789', 'quản lý phòng', 4000000),
+('NV008', 'Nguyễn Văn Hòa', 'Nam', '0789123123', 'sửa chữa', 4000000),
+('NV009', 'Đinh Thị Tuyết', 'Nam', '035123567', 'Dọn dẹp', 4000000),
+('NV010', 'Nguyễn Văn Hùng', 'Nam', '035891234', 'quét dọn', 4000000);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `quantucnghi`
+--
+
+CREATE TABLE `quantucnghi` (
+  `id` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sinhvien`
+--
+
+CREATE TABLE `sinhvien` (
+  `id` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `gioitinh` varchar(20) NOT NULL,
+  `ngaysinh` date NOT NULL,
+  `quequan` varchar(100) NOT NULL,
+  `sodt` varchar(100) NOT NULL,
+  `sophong` varchar(100) NOT NULL,
+  `anh` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `sinhvien`
+--
+
+INSERT INTO `sinhvien` (`id`, `name`, `gioitinh`, `ngaysinh`, `quequan`, `sodt`, `sophong`, `anh`) VALUES
+('B21DCCN122', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nghệ An', '01234567', '104', 'image\\\\anhSV\\\\a5.jpg'),
+('B21DCCN123', 'Nguyễn Hoàng Thái', 'Nam', '2003-12-01', 'Nam Định', '38272676', '104', 'image\\\\anhSV\\\\a15.jpg'),
+('B21DCCN124', 'Nguyễn Văn Quý', 'Nam', '2003-12-19', 'Hà Tĩnh', '37280921', '104', 'image\\\\\\\\anhSV\\\\\\\\a2.jpg'),
+('B21DCCN125', 'Lê Duy Quyết', 'Nam', '2003-12-23', 'Ba Vì', '38724107', '104', 'image\\\\anhSV\\\\a9.jpg'),
+('B21DCCN126', 'Nguyễn Thạc Bảo', 'Nam', '2003-12-31', 'Nam Định', '38268982', '104', 'image\\\\anhSV\\\\a3.jpg'),
+('B21DCCN127', 'Nguyễn Văn Thắm', 'Nam', '2003-11-12', 'Nam Định', '39438777', '104', 'image\\\\anhSV\\\\a4.jpg'),
+('B21DCCN128', 'Nguyễn Văn Tú', 'Nam', '2003-12-15', 'Nam Định', '01244467', '104', 'image\\\\anhSV\\\\a5.jpg'),
+('B21DCCN129', 'Nguyễn Thái Sơn', 'Nam', '2003-12-10', 'Nam Định', '01233367', '105', 'image\\\\anhSV\\\\a16.jpg'),
+('B21DCCN130', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Hà Nội', '01222268', '105', 'image\\\\anhSV\\\\a6.jpg'),
+('B21DCCN131', 'Nguyễn Hoàng Sơn', 'Nam', '2003-12-03', 'Nam Định', '37736851', '105', 'image\\\\anhSV\\\\a7.jpg'),
+('B21DCCN132', 'Nguyễn Hoàng Nam', 'Nam', '2003-12-05', 'Hà Nội', '01234545', '105', 'image\\\\anhSV\\\\a11.jpg'),
+('B21DCCN133', 'Nguyễn Hoàng Phúc', 'Nam', '2003-12-07', 'Bắc Ninh', '39325870', '105', 'image\\\\anhSV\\\\a8.jpg'),
+('B21DCCN134', 'Nguyễn Hoàng Binh', 'Nam', '2003-12-08', 'Bắc Ninh', '39325870', '105', 'image\\\\anhSV\\\\a8.jpg'),
+('B21DCCN135', 'Nguyễn Hoàng Minh', 'Nam', '2003-12-09', 'Nam Định', '01234566', '105', 'image\\\\anhSV\\\\a9.jpg'),
+('B21DCCN136', 'Nguyễn Hoàng Đức', 'Nam', '2003-12-01', 'Nam Định', '01234567', '105', 'image\\\\anhSV\\\\a9.jpg'),
+('B21DCCN137', 'Nguyễn Thai Binh', 'Nam', '2003-12-10', 'Hải Dương', '01234567', '106', 'image\\\\anhSV\\\\a10.jpg'),
+('B21DCCN138', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nam Định', '01234568', '106', 'image\\\\anhSV\\\\a12.jpg'),
+('B21DCCN139', 'Nguyễn Hoàng Sơn', 'Nam', '2003-12-03', 'Nghệ An', '01234566', '106', 'image\\\\anhSV\\\\a14.jpg'),
+('B21DCCN140', 'Nguyễn Hoàng Nam', 'Nam', '2003-12-05', 'Nam Định', '035678923', '106', 'image\\\\anhSV\\\\a23.jpg'),
+('B21DCCN141', 'Nguyễn Hoàng Phúc', 'Nam', '2003-12-07', 'Nam Định', '012348898', '106', 'image\\\\anhSV\\\\a27.jpg'),
+('B21DCCN142', 'Nguyễn Hoàng Binh', 'Nam', '2003-12-08', 'Nam Định', '01234564', '106', 'image\\\\anhSV\\\\a31.jpg'),
+('B21DCCN143', 'Nguyễn Hoàng Minh', 'Nam', '2003-12-09', 'Nam Định', '015689678', '106', 'image\\\\anhSV\\\\a34.jpg'),
+('B21DCCN144', 'Nguyễn Hoàng Đức', 'Nam', '2003-12-01', 'Bắc Ninh', '01234567', '106', 'image\\\\anhSV\\\\a42.jpg'),
+('B21DCCN147', 'Nguyễn Thai Binh', 'Nam', '2003-12-10', 'Thanh Hóa', '01234567', '201', 'image\\\\anhSV\\\\a43.jpg'),
+('B21DCCN148', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nam Định', '01234568', '201', 'image\\\\anhSV\\\\a39.jpg'),
+('B21DCCN149', 'Nguyễn Hoàng Sơn', 'Nam', '2003-12-03', 'Nam Định', '01234566', '201', 'D:demo2a6.jpg'),
+('B21DCCN150', 'Nguyễn Hoàng Nam', 'Nam', '2003-12-05', 'Hải Phòng', '01234545', '201', 'image\\\\anhSV\\\\a43.jpg'),
+('B21DCCN151', 'Nguyễn Hoàng Phúc', 'Nam', '2003-12-07', 'Nam Định', '01234573', '201', 'image\\\\anhSV\\\\a44.jpg'),
+('B21DCCN152', 'Nguyễn Hoàng Binh', 'Nam', '2003-12-08', 'Nam Định', '01234564', '201', 'image\\\\anhSV\\\\a42.jpg'),
+('B21DCCN153', 'Nguyễn Hoàng Minh', 'Nam', '2003-12-09', 'Nam Định', '01234566', '201', 'image\\\\anhSV\\\\a8.jpg'),
+('B21DCCN154', 'Nguyễn Hoàng Đức', 'Nam', '2003-12-01', 'Nam Định', '01234567', '201', 'image\\\\anhSV\\\\a29.jpg'),
+('B21DCCN155', 'Nguyễn Thị Bình', 'Nữ', '2003-12-10', 'Bac Ninh', '01234567', '202', 'image\\\\anhSV\\\\a45.jpg'),
+('B21DCCN156', 'Nguyễn Thị Lan', 'Nữ', '2003-12-01', 'Nghe An', '01234568', '202', 'image\\\\anhSV\\\\a11.jpg'),
+('B21DCCN157', 'Nguyễn Thị Mai', 'Nữ', '2003-12-03', 'Thanh Hoa', '01234566', '202', 'image\\\\anhSV\\\\a24.jpg'),
+('B21DCCN158', 'Nguyễn Thị Cẩm Tú', 'Nữ', '2003-12-05', 'Ha Tinh', '01234545', '202', 'image\\\\anhSV\\\\a19.jpg'),
+('B21DCCN159', 'Nguyễn Thị Mi', 'Nữ', '2003-12-07', 'Bắc Ninh', '01234573', '202', 'image\\\\anhSV\\\\a15.jpg'),
+('B21DCCN160', 'Nguyễn Thị Lan Anh', 'Nữ', '2003-12-08', 'Nam Định', '01234564', '202', 'image\\\\anhSV\\\\a16.jpg'),
+('B21DCCN161', 'Nguyễn Thị Khánh Minh', 'Nữ', '2003-12-09', 'Nghệ An', '01234566', '202', 'image\\\\anhSV\\\\a17.jpg'),
+('B21DCCN162', 'Hoàng Ngọc Minh Anh', 'Nữ', '2003-12-01', 'Hà Tĩnh', '01234567', '202', 'image\\\\anhSV\\\\a9.jpg'),
+('B21DCCN163', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nam Định', '01234567', '101', 'image\\\\anhSV\\\\a21.jpg'),
+('B21DCCN164', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nam Định', '03567899', '101', 'image\\\\anhSV\\\\a22.jpg'),
+('B21DCCN165', 'Nguyễn Văn Quý', 'Nam', '2003-12-19', 'Nam Định', '01234567', '101', 'D:demo2a9.jpg'),
+('B21DCCN166', 'Lê Duy Quyết', 'Nam', '2003-12-23', 'Nam Định', '01234567', '101', 'D:demo2a9.jpg'),
+('B21DCCN167', 'Nguyễn Thạc Bảo', 'Nam', '2003-12-31', 'Nam Định', '01234567', '101', 'D:demo2a9.jpg'),
+('B21DCCN168', 'Nguyễn Văn Thắm', 'Nam', '2003-11-12', 'Quảng Ninh', '01234567', '101', 'image\\\\anhSV\\\\a48.jpg'),
+('B21DCCN169', 'Nguyễn Văn Tú', 'Nam', '2003-12-15', 'Nam Định', '01234567', '101', 'D:demo2a9.jpg'),
+('B21DCCN170', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Nam Định', '01234567', '102', 'D:demo2a10.jpg'),
+('B21DCCN171', 'Nguyễn Hoàng Hải', 'Nam', '2003-12-01', 'Bắc Giang', '01234567', '102', 'image\\\\anhSV\\\\a49.jpg'),
+('B21DCCN172', 'Nguyễn Văn Quý', 'Nam', '2003-12-19', 'Nam Định', '01234567', '103', 'D:demo2a10.jpg'),
+('B21DCCN173', 'Lê Duy Quyết', 'Nam', '2003-12-23', 'Nam Định', '01234567', '103', 'D:demo2a11.jpg'),
+('B21DCCN174', 'Nguyễn Thạc Bảo', 'Nam', '2003-12-31', 'Nam Định', '01234567', '103', 'D:demo2a11.jpg'),
+('B21DCCN175', 'Nguyễn Văn Thắm', 'Nam', '2003-11-12', 'Lào Cai', '01234567', '103', 'image\\\\anhSV\\\\a27.jpg'),
+('B21DCCN176', 'Nguyễn Văn Tú', 'Nam', '2003-12-15', 'Yên Bái', '01234567', '103', 'image\\\\anhSV\\\\a7.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `taikhoan`
+--
+
+CREATE TABLE `taikhoan` (
+  `name` varchar(50) NOT NULL,
+  `matkhau` varchar(50) NOT NULL,
+  `gmail` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `taikhoan`
+--
+
+INSERT INTO `taikhoan` (`name`, `matkhau`, `gmail`) VALUES
+('a', 'a', 'a@gmail.com'),
+('aaa', '12345', '@gmail.com'),
+('aaaa', '12345', 'a@gmail.com'),
+('hi', 'ae', 'mtagi@gmail.com'),
+('mtagi', 'abc', 'thang@gmail.com'),
+('thang', '1234', 'name@gmail.com'),
+('thangdd', 'thang', 'tha@gmail.com'),
+('thangdeptrai', 'abc', 'thang@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `xe`
+--
+
+CREATE TABLE `xe` (
+  `bienso` varchar(50) NOT NULL,
+  `masv` varchar(50) NOT NULL,
+  `loaixe` varchar(1000) NOT NULL,
+  `mota` varchar(1000) NOT NULL,
+  `giathue` int(11) NOT NULL,
+  `dadong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `xe`
+--
+
+INSERT INTO `xe` (`bienso`, `masv`, `loaixe`, `mota`, `giathue`, `dadong`) VALUES
+('33-A1 123.45', 'B21DCCN123', 'SH', 'trắng', 150000, 2),
+('99-M1 321.45', 'B21DCCN123', 'SH', 'trắng-đen', 150000, 1),
+('98-A1 333.45', 'B21DCCN124', 'wave', 'trắng-đen', 150000, 1),
+('34-B1 222.45', 'B21DCCN125', 'wave', 'trắng', 150000, 3),
+('34-A1 444.45', 'B21DCCN126', 'wave', 'đỏ', 150000, 2),
+('29-C1 555.45', 'B21DCCN127', 'wave', 'trắng-đen', 150000, 4),
+('30-A1 666.45', 'B21DCCN128', 'wave', 'trắng-đen', 150000, 3),
+('34-D1 999.45', 'B21DCCN129', 'SH', 'trắng-đen', 150000, 1),
+('29-A1 888.45', 'B21DCCN130', 'wave', 'trắng-đen', 150000, 2),
+('34-A1 777.45', 'B21DCCN131', 'SH', 'trắng-đen', 150000, 4),
+('33-A1 111.45', 'B21DCCN132', 'wave', 'trắng-đen', 150000, 1),
+('99-M1 222.22', 'B21DCCN133', 'jupiter', 'trắng-đen', 150000, 1),
+('34-A1 789.45', 'B21DCCN134', 'jupiter', 'trắng-đen', 150000, 2),
+('99-M1 123.22', 'B21DCCN135', 'SH', 'trắng-đen', 150000, 3),
+('34-A1 123.55', 'B21DCCN136', 'jupiter', 'trắng-đen', 150000, 1),
+('99-H1 123.44', 'B21DCCN137', 'SH', 'trắng-đen', 150000, 2),
+('99-A1 123.88', 'B21DCCN139', 'SH', 'trắng-đen', 150000, 3),
+('34-H1 123.34', 'B21DCCN140', 'jupiter', 'đỏ', 150000, 1),
+('34-A1 555.55', 'B21DCCN141', 'SH', 'trắng-đen', 150000, 1),
+('33-H1 666.66', 'B21DCCN142', 'jupiter', 'trắng-đen', 150000, 2),
+('30-A1 444.44', 'B21DCCN143', 'jupiter', 'trắng-đen', 150000, 2),
+('34-A1 999.99', 'B21DCCN144', 'SH', 'trắng-đen', 150000, 3);
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `phong`
+--
+ALTER TABLE `phong`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `quantuc`
+--
+ALTER TABLE `quantuc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `quantucnghi`
+--
+ALTER TABLE `quantucnghi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `sinhvien`
+--
+ALTER TABLE `sinhvien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD PRIMARY KEY (`name`);

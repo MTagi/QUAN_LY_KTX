@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.quanli">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="106.0" layoutY="74.0" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nav" stylesheets="@main.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button fx:id="ql_phong" layoutX="32.0" layoutY="215.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" stylesheets="@main.css" text="Phòng " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="ql_sinhvien" layoutX="32.0" layoutY="273.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" stylesheets="@main.css" text="Sinh viên " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="ql_quantuc" layoutX="32.0" layoutY="334.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" stylesheets="@main.css" text="Quản túc  " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="ql_xe" layoutX="32.0" layoutY="395.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" text="Xe " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="ql_dichvu" layoutX="32.0" layoutY="452.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" text="Dịch vụ " textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="ql_tongquan" layoutX="32.0" layoutY="513.0" mnemonicParsing="false" onAction="#switchQuanLi" prefHeight="44.0" prefWidth="136.0" styleClass="purple" text="Tổng quan" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Label layoutX="48.0" layoutY="39.0" text="Quản lí ktx " textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="form_phong" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="9.0" layoutY="9.0" prefHeight="688.0" prefWidth="596.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="3.0" layoutY="110.0" prefHeight="574.0" prefWidth="590.0">
+                                       <styleClass>
+                                          <String fx:value="radius" />
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane fx:id="tang1_form" layoutX="11.0" layoutY="46.0" prefHeight="579.0" prefWidth="590.0" styleClass="textfield1" stylesheets="@main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane layoutX="32.0" layoutY="39.0" onMouseClicked="#phongdichvu101" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a101" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p101" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 101 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong101" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutY="1.0" prefHeight="141.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="39.0" onMouseClicked="#phongdichvu102" prefHeight="140.0" prefWidth="145.0">
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a102" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p102" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 102" />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong102" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="39.0" onMouseClicked="#phongdichvu103" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a103" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p103" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 103 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong103" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="9.0" layoutY="-14.0" prefHeight="140.0" prefWidth="154.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="32.0" layoutY="220.0" onMouseClicked="#phongdichvu104" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a104" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p104" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 104 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong104" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="5.0" layoutY="4.0" prefHeight="145.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+<!--                                                      <Avatar layoutX="47.0" layoutY="52.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="220.0" onMouseClicked="#phongdichvu105" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a105" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p105" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 105 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong105" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-6.0" layoutY="-31.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="220.0" onMouseClicked="#phongdichvu106" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a106" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p106" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 106 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong106" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-2.0" layoutY="-28.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+<!--                                                      <Icon content="HELP_OUTLINE" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="tang2_form" prefHeight="579.0" prefWidth="590.0" styleClass="textfield2" visible="false">
+                                             <children>
+                                                <AnchorPane layoutX="32.0" layoutY="39.0" onMouseClicked="#phongdichvu201" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a201" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p201" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 201 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong201" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="21.0" layoutY="26.0" prefHeight="166.0" prefWidth="166.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="39.0" onMouseClicked="#phongdichvu202" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a202" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p202" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 202" />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong202" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="43.0" layoutY="15.0" prefHeight="155.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="39.0" onMouseClicked="#phongdichvu203" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a203" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p203" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 203 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong203" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-25.0" layoutY="2.0" prefHeight="142.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="32.0" layoutY="220.0" onMouseClicked="#phongdichvu204" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a204" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p204" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 204 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong204" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-12.0" layoutY="11.0" prefHeight="151.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="220.0" onMouseClicked="#phongdichvu205" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a205" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p205" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 205 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong205" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="17.0" layoutY="-31.0" prefHeight="140.0" prefWidth="162.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="220.0" onMouseClicked="#phongdichvu206" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a206" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p206" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 206 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong206" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-15.0" layoutY="-16.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="tang3_form" prefHeight="579.0" prefWidth="590.0" styleClass="textfield3" visible="false">
+                                             <children>
+                                                <AnchorPane layoutX="32.0" layoutY="39.0" onMouseClicked="#phongdichvu301" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a301" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p301" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 301" />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong301" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="10.0" layoutY="-4.0" prefHeight="140.0" prefWidth="155.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="39.0" onMouseClicked="#phongdichvu302" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a302" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1022" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 302" />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong302" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-20.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="39.0" onMouseClicked="#phongdichvu303" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a303" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1032" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 303 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong303" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="28.0" layoutY="-26.0" prefHeight="140.0" prefWidth="173.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="32.0" layoutY="220.0" onMouseClicked="#phongdichvu304" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a304" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1042" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 304 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong304" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="16.0" layoutY="42.0" prefHeight="182.0" prefWidth="161.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="220.0" onMouseClicked="#phongdichvu305" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a305" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p1052" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 305 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong305" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="21.0" layoutY="14.0" prefHeight="154.0" prefWidth="166.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="220.0" onMouseClicked="#phongdichvu306" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a306" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1062" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 306 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong306" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="5.0" layoutY="11.0" prefHeight="151.0" prefWidth="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="tang4_form" prefHeight="579.0" prefWidth="590.0" styleClass="textfield4" visible="false">
+                                             <children>
+                                                <AnchorPane layoutX="32.0" layoutY="39.0" onMouseClicked="#phongdichvu401" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a401" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p1013" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 401 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong401" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="33.0" layoutY="19.0" prefHeight="159.0" prefWidth="178.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="39.0" onMouseClicked="#phongdichvu402" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a402" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" text="" />-->
+                                                      <Label fx:id="p1023" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 402" />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong402" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="17.0" layoutY="-3.0" prefHeight="140.0" prefWidth="162.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="39.0" onMouseClicked="#phongdichvu403" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a403" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1033" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 403 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong403" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-9.0" layoutY="-12.0" prefHeight="140.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="32.0" layoutY="220.0" onMouseClicked="#phongdichvu404" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a404" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1043" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 404 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong404" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="8.0" layoutY="3.0" prefHeight="143.0" prefWidth="153.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="223.0" layoutY="220.0" onMouseClicked="#phongdichvu405" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a405" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1053" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 405 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong405" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-3.0" layoutY="19.0" prefHeight="159.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="409.0" layoutY="220.0" onMouseClicked="#phongdichvu406" prefHeight="140.0" prefWidth="145.0">
+                                                   <styleClass>
+                                                      <String fx:value="radius" />
+                                                      <String fx:value="shadow" />
+                                                      <String fx:value="white-bg" />
+                                                   </styleClass>
+                                                   <children>
+<!--                                                      <FontAwesomeIconView fx:id="a406" glyphName="HOME" layoutX="35.0" layoutY="98.0" size="80" />-->
+                                                      <Label fx:id="p1063" alignment="CENTER" layoutX="32.0" layoutY="14.0" prefHeight="18.0" prefWidth="80.0" text="Phòng 406 " />
+                                                      <Label layoutX="19.0" layoutY="109.0" text="Số lượng:" />
+                                                      <Label fx:id="soluong406" layoutX="84.0" layoutY="109.0" prefHeight="18.0" prefWidth="34.0" />
+<!--                                                      <Icon  content="HOME" layoutX="-1.0" layoutY="29.0" prefHeight="169.0" prefWidth="145.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="tang1" layoutX="89.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchTang" prefHeight="34.0" prefWidth="84.0" styleClass="btn" stylesheets="@main.css" text="Tầng 1 " />
+                                    <Button fx:id="tang2" layoutX="335.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchTang" prefHeight="34.0" prefWidth="84.0" styleClass="btn" text="Tầng 2 " />
+                                    <Button fx:id="tang3" layoutX="89.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchTang" prefHeight="34.0" prefWidth="84.0" styleClass="btn" text="Tầng 3  " />
+                                    <Button fx:id="tang4" layoutX="335.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchTang" prefHeight="34.0" prefWidth="84.0" styleClass="btn" text="Tầng 4 " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="621.0" layoutY="8.0" prefHeight="684.0" prefWidth="365.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="phong_bangsinhvien" layoutX="10.0" layoutY="40.0" prefHeight="302.0" prefWidth="351.0" styleClass="table-column" stylesheets="@main.css" AnchorPane.bottomAnchor="342.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+                                      <columns>
+                                        <TableColumn minWidth="0.0" prefWidth="0.0" />
+                                        <TableColumn fx:id="phong_masinhvien" minWidth="0.0" prefWidth="135.0" text="Mã sinh viên " />
+                                          <TableColumn fx:id="phong_hoten" maxWidth="208.0" prefWidth="208.0" text="Họ và tên " />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="104.0" layoutY="378.0" text="Các dịch vụ được sử dụng ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TableView fx:id="phong_bangdichvu" layoutX="6.0" layoutY="416.0" prefHeight="255.0" prefWidth="353.0">
+                                      <columns>
+                                        <TableColumn fx:id="phong_madichvu" prefWidth="150.0" text="Mã dịch vụ " />
+                                        <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                                          <TableColumn fx:id="phong_tendichvu" prefWidth="202.0" text="Tên dịch vụ " />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="86.0" layoutY="14.0" text="Danh sách sinh viên trong phòng  ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_sinhvien" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="285.0" layoutY="11.0" prefHeight="679.0" prefWidth="707.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TextField fx:id="sinhvien_timkiem" layoutX="22.0" layoutY="23.0" promptText="Tìm kiếm theo tên" />
+                                    <TableView fx:id="sinhvien_bang" layoutX="8.0" layoutY="67.0" onMouseClicked="#chonsinhvien" prefHeight="605.0" prefWidth="692.0" styleClass="table-column">
+                                       <columns>
+                                          <TableColumn fx:id="bangsinhvien_id" prefWidth="117.0" text="Mã sinh viên" />
+                                          <TableColumn fx:id="bangsinhvien_name" prefWidth="135.5" text="Họ và tên " />
+                                          <TableColumn fx:id="bangsinhvien_gioitinh" prefWidth="61.5" text="Giới tính" />
+                                          <TableColumn fx:id="bangsinhvien_ngaysinh" prefWidth="76.0" text="Ngày sinh " />
+                                          <TableColumn fx:id="bangsinhvien_quequan" minWidth="0.0" prefWidth="98.5" text="Quê quán " />
+                                          <TableColumn fx:id="bangsinhvien_sodt" minWidth="0.0" prefWidth="93.5" text="Số điện thoại " />
+                                          <TableColumn fx:id="bangsinhvien_sophong" prefWidth="114.5" text="Số phòng " />
+                                       </columns>
+                                    </TableView>
+                                    <Button layoutX="182.0" layoutY="21.0" mnemonicParsing="false" onAction="#hienthisinhvien" styleClass="btn" text="TÌM " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="677.0" prefWidth="261.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane fx:id="main_form" layoutX="81.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="94.0" stylesheets="@main.css">
+                                       <styleClass>
+                                          <String fx:value="radius" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <ImageView fx:id="anhsinhvien" fitHeight="115.0" fitWidth="94.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                                           
+                                          </ImageView>
+                                          <Button fx:id="chonanh" layoutX="19.0" layoutY="94.0" mnemonicParsing="false" onAction="#themanhsinhvien" styleClass="btn" stylesheets="@main.css" text="Image">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <effect>
+                                                <Blend />
+                                             </effect>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="24.0" layoutY="193.0" text="Mã SV">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="sinhvien_masv" layoutX="83.0" layoutY="190.0" minWidth="-Infinity" prefHeight="11.0" prefWidth="148.0" styleClass="textfield" stylesheets="@main.css">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="13.0" layoutY="244.0" text="Họ và tên ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="12.0" layoutY="383.0" text="Quê quán">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="sinhvien_gioitinh" layoutX="80.0" layoutY="292.0" prefHeight="21.0" prefWidth="101.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="14.0" layoutY="295.0" text="Giới tính ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker fx:id="sinhvien_ngaysinh" layoutX="81.0" layoutY="331.0" minWidth="-Infinity" prefHeight="26.0" prefWidth="136.0" styleClass="textfield" />
+                                    <Label layoutX="11.0" layoutY="334.0" text="Ngày sinh">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="sinhvien_hoten" layoutX="83.0" layoutY="241.0" minWidth="-Infinity" prefHeight="11.0" prefWidth="148.0" styleClass="textfield" stylesheets="@main.css">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="sinhvien_quequan" layoutX="83.0" layoutY="380.0" minWidth="-Infinity" prefHeight="11.0" prefWidth="148.0" styleClass="textfield" stylesheets="@main.css">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="sinhvien_sodt" layoutX="83.0" layoutY="421.0" minWidth="-Infinity" prefHeight="11.0" prefWidth="148.0" styleClass="textfield" stylesheets="@main.css">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label layoutX="14.0" layoutY="424.0" text="Số đt ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="sinhvien_them" layoutX="18.0" layoutY="530.0" mnemonicParsing="false" onAction="#sinhvienthem" prefHeight="39.0" prefWidth="92.0" styleClass="btn" text="Thêm " />
+                                    <Button fx:id="sinhvien_xoa" layoutX="149.0" layoutY="530.0" mnemonicParsing="false" onAction="#sinhvienxoa" prefHeight="39.0" prefWidth="92.0" styleClass="btn" text="Xóa " />
+                                    <Button fx:id="sinhvien_sua" layoutX="85.0" layoutY="600.0" mnemonicParsing="false" onAction="#sinhviensua" prefHeight="39.0" prefWidth="92.0" styleClass="btn" text="Sửa " />
+                                    <Label layoutX="14.0" layoutY="467.0" text="Số phòng ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="sinhvien_sophong" layoutX="83.0" layoutY="462.0" minWidth="-Infinity" prefHeight="11.0" prefWidth="148.0" styleClass="textfield" stylesheets="@main.css">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_quantuc" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="8.0" layoutY="292.0" prefHeight="404.0" prefWidth="988.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="quantuc_bang" layoutX="3.0" layoutY="7.0" prefHeight="404.0" prefWidth="988.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="quantuc_bangsid" prefWidth="119.0" text="Mã nhân viên " />
+                                          <TableColumn fx:id="quantuc_bangten" prefWidth="133.5" text="Họ và tên  " />
+                                          <TableColumn fx:id="quantuc_banggioitinh" prefWidth="100.0" text="Giới tính " />
+                                          <TableColumn fx:id="quantuc_bangsodt" prefWidth="142.0" text="Số điện thoại" />
+                                          <TableColumn fx:id="quantuc_bangvaitro" prefWidth="358.0" text="Vai trò " />
+                                          <TableColumn fx:id="quantuc_bangluong" prefWidth="133.5" text="Lương" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="8.0" layoutY="15.0" prefHeight="263.0" prefWidth="683.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="28.0" layoutY="31.0" text="Họ và tên " />
+                                    <TextField fx:id="quantuc_hoten" layoutX="104.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="28.0" layoutY="74.0" text="Giới tính " />
+                                    <TextField fx:id="quantuc_luong" layoutX="402.0" layoutY="125.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="312.0" layoutY="31.0" text="Mã nhân viên " />
+                                    <TextField fx:id="quantuc_ma" layoutX="401.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="305.0" layoutY="75.0" prefHeight="18.0" prefWidth="97.0" text="Số điện thoại " />
+                                    <TextField fx:id="quantuc_sdt" layoutX="401.0" layoutY="72.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="28.0" layoutY="124.0" text="Vai trò " />
+                                    <TextField fx:id="quantuc_vaitro" layoutX="104.0" layoutY="122.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="325.0" layoutY="127.0" text="Lương " />
+                                    <Button fx:id="quantuc_them" layoutX="123.0" layoutY="161.0" mnemonicParsing="false" onAction="#quantucthem" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Thêm " />
+                                    <Button fx:id="quantuc_xoa" layoutX="420.0" layoutY="161.0" mnemonicParsing="false" onAction="#quantucxoa" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Xóa " />
+                                    <Button fx:id="quantuc_sua" layoutX="123.0" layoutY="207.0" mnemonicParsing="false" onAction="#quantucsua" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Sửa " />
+                                    <Button fx:id="quantuc_xinnghi" layoutX="420.0" layoutY="207.0" mnemonicParsing="false" onAction="#quantucxinnghi" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Xin nghỉ " />
+                                    <ComboBox fx:id="quantuc_gioitinh" editable="true" layoutX="104.0" layoutY="70.0" onAction="#taogioitinhquantuc" prefWidth="150.0" promptText="Chọn" styleClass="textfield" visibleRowCount="2" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="704.0" layoutY="16.0" prefHeight="262.0" prefWidth="292.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="shadow" />
+                                    <String fx:value="radius" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="83.0" layoutY="14.0" prefHeight="18.0" prefWidth="121.0" text="Danh sách xin nghỉ " />
+                                    <Button fx:id="quantuc_xoanghi" layoutX="88.0" layoutY="214.0" mnemonicParsing="false" onAction="#quantucnghixoa" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Xóa " />
+                                    <TableView fx:id="quantuc_bangnghi" layoutX="5.0" layoutY="32.0" prefHeight="170.0" prefWidth="280.0">
+                                      <columns>
+                                        <TableColumn fx:id="quantucnghi_id" prefWidth="115.5" text="Mã nhân viên " />
+                                        <TableColumn fx:id="quantucnghi_name" prefWidth="162.5" text="Họ và tên " />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_xe" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" layoutY="9.0" prefHeight="684.0" prefWidth="639.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="37.0" layoutY="521.0" text="Giá thuê " />
+                                    <TextField layoutX="400.0" layoutY="453.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_mota" />
+                                    <Label layoutX="41.0" layoutY="456.0" text="Loại xe " />
+                                    <TextField layoutX="400.0" layoutY="518.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_dadong" />
+                                    <Label layoutX="330.0" layoutY="456.0" text="Mô tả " />
+                                    <TextField layoutX="111.0" layoutY="518.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_giathue" />
+                                    <Label layoutX="281.0" layoutY="521.0" prefHeight="18.0" prefWidth="115.0" text="Số tháng đã đóng " />
+                                    <TextField layoutX="111.0" layoutY="453.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_loaixe" />
+                                    <Label layoutX="36.0" layoutY="393.0" text="Biển số xe" />
+                                    <TextField layoutX="400.0" layoutY="390.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_masinhvien" />
+                                    <Label layoutX="303.0" layoutY="393.0" text="Mã sinh viên " />
+                                    <TextField layoutX="111.0" layoutY="390.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" fx:id="xe_bien" />
+                                    <Button layoutX="41.0" layoutY="587.0" mnemonicParsing="false" onAction="#xethem" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Thêm " fx:id="xe_them" />
+                                    <Button layoutX="429.0" layoutY="587.0" mnemonicParsing="false" onAction="#xexoa" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Xóa " fx:id="xe_xoa" />
+                                    <Button layoutX="237.0" layoutY="587.0" mnemonicParsing="false" onAction="#xesua" prefHeight="37.0" prefWidth="112.0" styleClass="btn" text="Sửa " fx:id="xe_sua" />
+                                    <TableView layoutX="6.0" layoutY="6.0" onMouseClicked="#chonmotxe" prefHeight="359.0" prefWidth="628.0" fx:id="xe_bang">
+                                      <columns>
+                                        <TableColumn fx:id="bangxe_ma" prefWidth="75.0" text="Mã xe " />
+                                        <TableColumn fx:id="bangxe_bienso" prefWidth="101.5" text="Biển số xe " />
+                                          <TableColumn fx:id="bangxe_loaixe" prefWidth="82.0" text="Loại xe " />
+                                          <TableColumn fx:id="bangxe_giathue" prefWidth="106.5" text="Giá thuê " />
+                                          <TableColumn fx:id="bangxe_mota" prefWidth="148.5" text="Mô tả " />
+                                          <TableColumn fx:id="bangxe_dadong" prefWidth="112.5" text="Số tháng đã đóng " />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="655.0" layoutY="9.0" onMouseClicked="#chonmotxe" prefHeight="280.0" prefWidth="334.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="128.0" layoutY="21.0" text="Chủ sở hữu ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <ImageView fitHeight="150.0" fitWidth="132.0" layoutX="99.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" fx:id="xe_hienthianh" />
+                                    <Label layoutX="59.0" layoutY="203.0" prefHeight="27.0" prefWidth="138.0" fx:id="xe_hienthimsv">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="59.0" layoutY="239.0" prefHeight="27.0" prefWidth="243.0" fx:id="xe_hienthihoten">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="656.0" layoutY="302.0" prefHeight="390.0" prefWidth="332.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="100.0" layoutY="33.0" text="Số lượng chỗ trống   ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <PieChart layoutY="80.0" prefHeight="309.0" prefWidth="328.0" fx:id="xe_bieudo" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_dichvu" layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" layoutY="9.0" prefHeight="690.0" prefWidth="542.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="dichvu_bang" layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="515.0">
+                                      <columns>
+                                        <TableColumn fx:id="dichvubang_id" prefWidth="109.0" text="Mã dịch vụ " />
+                                        <TableColumn fx:id="dichvubang_ten" prefWidth="114.5" text="Tên dịch vụ " />
+                                          <TableColumn fx:id="dichvubang_chucnang" prefWidth="141.0" text="Chức năng " />
+                                          <TableColumn fx:id="dichvubang_gia" prefWidth="148.5" text="Giá tiền " />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="170.0" layoutY="589.0" text="Thông tin dịch vụ của phòng">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="dichvu_chucnag" layoutX="95.0" layoutY="474.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="284.0" layoutY="477.0" text="Giá tiền " />
+                                    <Label layoutX="16.0" layoutY="477.0" text="Chức năng  " />
+                                    <TextField fx:id="dichvu_gia" layoutX="374.0" layoutY="474.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="16.0" layoutY="422.0" text="Mã dịch vụ " />
+                                    <TextField fx:id="dichvu_ma" layoutX="95.0" layoutY="419.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Label layoutX="268.0" layoutY="422.0" text="Tên dịch vụ " />
+                                    <TextField fx:id="dichvu_ten" layoutX="374.0" layoutY="419.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Button fx:id="dichvu_them" layoutX="61.0" layoutY="517.0" mnemonicParsing="false" onAction="#dichvuthem" prefHeight="34.0" prefWidth="89.0" styleClass="btn" text="Thêm " />
+                                    <Button fx:id="dichvu_xoa" layoutX="215.0" layoutY="517.0" mnemonicParsing="false" onAction="#dichvuxoa" prefHeight="34.0" prefWidth="89.0" styleClass="btn" text="Xóa " />
+                                    <Button fx:id="dichvu_sua" layoutX="360.0" layoutY="517.0" mnemonicParsing="false" onAction="#dichvusua" prefHeight="34.0" prefWidth="89.0" styleClass="btn" text="Sửa " />
+                                    <Label layoutX="19.0" layoutY="633.0" text="Mã phòng " />
+                                    <TextField fx:id="dichvu_maphong" layoutX="87.0" layoutY="631.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="149.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Button fx:id="dichvu_themphong" layoutX="434.0" layoutY="625.0" mnemonicParsing="false" onAction="#tinhtienthemdichvu" prefHeight="34.0" prefWidth="89.0" styleClass="btn" text="Thêm " />
+                                    <Button fx:id="dichvu_themphong1" layoutX="308.0" layoutY="625.0" mnemonicParsing="false" onAction="#dichvu_hienthidichvu" prefHeight="34.0" prefWidth="89.0" styleClass="btn" text="Hiển thị " />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="558.0" layoutY="9.0" prefHeight="394.0" prefWidth="440.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="166.0" layoutY="14.0" text="Tính tiền dịch vụ  " />
+                                    <Label layoutX="62.0" layoutY="270.0" prefHeight="18.0" prefWidth="72.0" text="Tổng tiền :" />
+                                    <TextField fx:id="tinhtien_tongtien" layoutX="142.0" layoutY="266.0" styleClass="textfield" stylesheets="@main.css" />
+                                    <Button fx:id="tinhtien_xoa" layoutX="168.0" layoutY="317.0" mnemonicParsing="false" onAction="#tinhtienxoadichvu" prefHeight="33.0" prefWidth="99.0" styleClass="btn" text="Xóa " />
+                                    <TableView fx:id="tinhtien_dichvu" layoutX="8.0" layoutY="44.0" prefHeight="202.0" prefWidth="420.0">
+                                       <columns>
+                                          <TableColumn fx:id="tinhtien_madv" prefWidth="140.5" text="Mã dịch vụ " />
+                                          <TableColumn fx:id="tinhtien_tendv" minWidth="0.0" prefWidth="118.0" text="Tên dịch vụ " />
+                                          <TableColumn fx:id="tinhtien_giatien" minWidth="0.0" prefWidth="159.5" text="Giá tiền " />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="557.0" layoutY="418.0" prefHeight="279.0" prefWidth="439.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="31.0" layoutY="26.0" text="Tài khoản thanh toán: ">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <ImageView fx:id="anhqr" fitHeight="179.0" fitWidth="182.0" layoutX="36.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="264.0" layoutY="95.0" prefHeight="18.0" prefWidth="139.0" text="STK: 1411-2110 " />
+                                    <Label layoutX="264.0" layoutY="67.0" prefHeight="18.0" prefWidth="139.0" text="Ngân hàng: MTAGI " />
+                                    <Label layoutX="218.0" layoutY="35.0" prefHeight="18.0" prefWidth="206.0" text="TÊN: VU HOANG THIEN PHONG " />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_tongquat" layoutX="20.0" layoutY="20.0" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="5.0" layoutY="271.0" prefHeight="427.0" prefWidth="991.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label layoutX="400.0" layoutY="7.0" prefHeight="43.0" prefWidth="191.0" text="NỘI QUY KÝ TÚC XÁ">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="57.0" prefHeight="26.0" prefWidth="909.0" text="Điều 1. Người không có nhiệm vụ không được vào ký túc xá sinh viên." />
+                                    <Label layoutX="14.0" layoutY="100.0" prefHeight="26.0" prefWidth="909.0" text="Điều 2. Khách đến liên hệ công tác hoặc thăm người nhà ở ký túc xá phải xuất trình giấy tờ với nhân viên trực bảo vệ ký túc xá." />
+                                    <Label layoutX="14.0" layoutY="141.0" prefHeight="26.0" prefWidth="963.0" text="Điều 3. Từ 22h ngày hôm trước đến 5h ngày hôm sau, nghiêm cấm người ở ký túc xá ra vào ký túc xá (trừ trường hợp có lý do chính đáng)." />
+                                    <Label layoutX="14.0" layoutY="188.0" prefHeight="26.0" prefWidth="963.0" text="Điều 4. Không đưa xe đạp, xe máy vào ký túc xá và phải để đúng nơi quy định." />
+                                    <Label layoutX="14.0" layoutY="238.0" prefHeight="26.0" prefWidth="963.0" text="Điều 5. Không đun nấu, tổ chức ăn, uống rượu, bia, xả rác bừa bãi trong ký túc xá." />
+                                    <Label layoutX="14.0" layoutY="282.0" prefHeight="26.0" prefWidth="963.0" text="Điều 6. Không gây tiếng ồn, đốt các chất liệu gây khói, lửa, nổ." />
+                                    <Label layoutX="14.0" layoutY="333.0" prefHeight="26.0" prefWidth="963.0" text="Điều 7. Giữ gìn phòng ở gọn gàng, sạch đẹp, văn minh, lịch sự, tích cực tham gia các phòng trào hội thi do Ban quản lý ký túc xá phát động và tổ chức." />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="5.0" layoutY="14.0" prefHeight="245.0" prefWidth="240.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="51.0" layoutY="32.0" prefHeight="39.0" prefWidth="138.0" text="Sinh viên " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="105.0" text="Số lượng sinh viên: ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongsinhvien" layoutX="80.0" layoutY="140.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="253.0" layoutY="14.0" prefHeight="245.0" prefWidth="240.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="51.0" layoutY="30.0" prefHeight="39.0" prefWidth="138.0" text="Quản túc" textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="105.0" prefHeight="18.0" prefWidth="120.0" text="Số lượng quản túc:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="14.0" layoutY="170.0" text="Số lượng quản túc nghỉ:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongquantuc" layoutX="74.0" layoutY="133.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongquantucnghi" layoutX="80.0" layoutY="199.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="502.0" layoutY="14.0" prefHeight="245.0" prefWidth="240.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="51.0" layoutY="29.0" prefHeight="39.0" prefWidth="138.0" text="Xe " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="105.0" prefHeight="18.0" prefWidth="120.0" text="Số lượng xe:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="14.0" layoutY="165.0" prefHeight="20.0" prefWidth="130.0" text="Số lượng vị trí trống:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongxe" layoutX="80.0" layoutY="132.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongvitritrong" layoutX="80.0" layoutY="197.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="756.0" layoutY="14.0" prefHeight="245.0" prefWidth="240.0" stylesheets="@main.css">
+                                 <styleClass>
+                                    <String fx:value="radius" />
+                                    <String fx:value="shadow" />
+                                    <String fx:value="white-bg" />
+                                 </styleClass>
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="51.0" layoutY="27.0" prefHeight="39.0" prefWidth="138.0" text="Dịch vụ " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="27.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="105.0" prefHeight="18.0" prefWidth="120.0" text="Số lượng dịch vụ:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="soluongdichvu" layoutX="80.0" layoutY="135.0" text="                        " textFill="#871cce">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="form_chao" layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="1000.0">
+                           <children>
+                              <AnchorPane layoutX="159.0" layoutY="99.0" prefHeight="700.0" prefWidth="1000.0" styleClass="textfield" stylesheets="@main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="209.0" layoutY="204.0" prefHeight="146.0" prefWidth="582.0" text="Chào mừng bạn đến với hệ thống quản lí kí túc xá ">
+                                       <font>
+                                          <Font name="System Bold" size="24.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
